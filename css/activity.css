@@ -1,0 +1,13 @@
+.activity{
+    display: table;
+    margin-left: 10px;
+}
+.activity > img{
+    width: 300px;
+    height: 250px;
+    border-radius: 10px;
+}
+.activity > h3{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
