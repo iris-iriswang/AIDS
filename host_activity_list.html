@@ -8,7 +8,7 @@
 
         <link rel="stylesheet" href="./css/bootstrap.min.css" charset="utf-8">
         <link rel="stylesheet" href="./css/navbar-static-top.css" >
-        <link rel="stylesheet" href="./css/create_activity.css" >
+        <link rel="stylesheet" href="./css/index.css" >
         <link rel="stylesheet" href="./css/style.css">
 
         <!-- jquery must load first, because bs needs to use jquery -->
@@ -39,7 +39,7 @@
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">+ 建立活動</a></li>
+                        <li><a href="create_activity.html">+ 建立活動</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">your name<span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -55,29 +55,50 @@
         </nav>
 
         <div class="container">
-            <form class="form act-form" action="" method="">
-                <div class="form-group">
-                    <label for="act_title">活動名稱：</label>
-                    <input type="text" class="form-control"  id="act_title" placeholder="活動名稱" autofocus="">
-                </div><!-- /.form-group -->
-                <div class="form-group">
-                    <label for="act_date">活動日期：</label>
-                    <input type="date" class="form-control"  id="act_date" placeholder="YYYY/MM/DD">
-                </div><!-- /.form-group -->
-                <div class="form-group">
-                    <label for="act_time">活動日期：</label>
-                    <input type="time" class="form-control"  id="act_time" placeholder="HH:MM">
-                </div><!-- /.form-group -->
-                <div class="form-group">
-                    <label for="act_location">活動地點：</label>
-                    <input type="text" class="form-control"  id="act_location" placeholder="Loction">
-                </div><!-- /.form-group -->
-                <div class="form-group">
-                    <label for="act_introduce">活動簡介：</label>
-                    <textarea type="text" class="form-control" warp="soft" id="act_introduce" maxlength="300" placeholder="Introduce"></textarea>
-                </div><!-- /.form-group -->
-                <button type="submit" class="btn btn-success">建立</button>
-            </form>
+            <h4> 創辦活動列表 </h4>
+            <!-- listimg -->
+            <div class="media center">
+                <div class="media-left media-middle">
+                    <a href="#">
+                    <img class="media-object listimg" src="./img/test.jpg" alt="...">
+                    </a>
+                </div>
+                <div class="media-right media-body">
+                    <h2 class="media-heading">活動名稱</h2>
+                    <p class="time">2016/06/17 (五) 13:20 - 15:10</p>
+                    <p>地點地點</p>
+                    <p>活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介</p>
+                </div><!-- /.media-body -->
+            </div><!-- /.media -->
+            <hr>
+            <div class="media center">
+                <div class="media-left media-middle">
+                    <a href="#">
+                    <img class="media-object listimg" src="./img/test.jpg" alt="...">
+                    </a>
+                </div>
+                <div class="media-right media-body">
+                    <h2 class="media-heading">活動名稱</h2>
+                    <p class="time">2016/06/17 (五) 13:20 - 15:10</p>
+                    <p>地點地點</p>
+                    <p>活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介</p>
+                </div><!-- /.media-body -->
+            </div><!-- /.media -->
+            <hr>
+            <div class="media center">
+                <div class="media-left media-middle">
+                    <a href="#">
+                    <img class="media-object listimg" src="./img/test.jpg" alt="...">
+                    </a>
+                </div>
+                <div class="media-body media-right">
+                    <h2 class="media-heading">活動名稱</h2>
+                    <p class="time">2016/06/17 (五) 13:20 - 15:10</p>
+                    <p>地點地點</p>
+                    <p>活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介</p>
+                </div><!-- /.media-body -->
+            </div><!-- /.media -->
+
         </div><!-- /.container -->
     </body>
 </html>
