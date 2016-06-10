@@ -6,3 +6,21 @@ body{
     width: auto;
     max-width: 500px;
 }
+.profile {
+    margin: auto;
+    width: auto;
+    max-width: 500px;
+    padding: 0px;
+    display: table;
+}
+.profile >img{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    display: table;
+}
+.profile >p{
+    margin: auto;
+    display: table;
+    font-size: 20px;
+}
