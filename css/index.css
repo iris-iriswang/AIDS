@@ -10,10 +10,17 @@ img.listimg{
     width: 260px;
     height: 200px;
 }
+
 p.time{
     color: grey;
 }
 .center{
     margin-left: 20px;
     margin-right: 20px;
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    height: 400px;
+    width: 70%;
+    margin: auto;
 }
