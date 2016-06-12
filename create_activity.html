@@ -14,6 +14,7 @@
         <!-- jquery must load first, because bs needs to use jquery -->
         <script type="text/javascript" src="./js/jquery.min.js"></script>
         <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+        <script src="./js/jquery.cookie.js"></script>
     </head>
 
 
@@ -41,7 +42,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">+ 建立活動</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">your name<span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="name">your name<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="attend_activity_list.html">已參加活動</a></li>
                                 <li><a href="host_activity_list.html">創辦的活動</a></li>
@@ -49,13 +50,14 @@
                                 <li><a href="profile.html">關於我</a></li>
                             </ul>
                         </li>
+                        <li><a href="#"></a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container -->
         </nav>
 
         <div class="container">
-            <form class="form-horizontal act-form" action="" method="">
+            <form class="form-horizontal act-form" action="" method="" id="create_activity">
                 <h2>活動內容</h2>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="act_title">名稱：</label>
@@ -85,8 +87,23 @@
                     <label class="control-label col-sm-2" for="act_introduce">簡介：</label>
                     <textarea type="text" class="form-control" warp="soft" id="act_introduce" maxlength="300" placeholder="Introduce"></textarea>
                 </div><!-- /.form-group -->
-                <button type="submit" class="btn btn-success">建立</button>
+                <input type="submit" value="建立">
             </form>
         </div><!-- /.container -->
+        <script>
+        $(document).ready(function(){
+
+            $("#name").html($.cookie("ID")+'<span class="caret"></span>');
+            $("#create_activity").submit(function(){
+                    var total = $.cookie("activity");
+                    var act = $("#act_title").val()+','+$("#act_date").val()+','+$("#act_time").val()+','+$("#act_location").val()+','+$("#act_introduce").val()+'&';
+                    $.cookie("activity",total+act);
+                    console.log($.cookie("activity"));
+                    alert('成功');
+                    window.location.assign('index.html')
+                    return false;
+            })
+        });
+        </script>
     </body>
 </html>

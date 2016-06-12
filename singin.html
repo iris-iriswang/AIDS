@@ -14,6 +14,7 @@
         <!-- jquery must load first, because bs needs to use jquery -->
         <script type="text/javascript" src="./js/jquery.min.js"></script>
         <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+        <script src="./js/jquery.cookie.js"></script>
     </head>
 
 
@@ -42,14 +43,26 @@
         </nav>
 
         <div class="container">
-            <form class="form" action="" method="">
+            <form class="form" id="login" action="" method="">
                 <h3>請以信箱登入</h3>
                 <div class="form-group">
-                    <input class="form-control" type="email" placeholder="信箱"></input>
-                    <input class="form-control" type="password" placeholder="密碼"></input>
+                    <input class="form-control" type="text" id="email" placeholder="信箱">
+                    <input class="form-control" type="text" id="password" placeholder="密碼">
                 </div>
-                <button class="btn btn-primary" type="button">登入</button>
+                <input class="btn btn-primary" type="submit" value="登入">
             </form>
         </div><!-- /.container -->
+
+        <script>
+            $(document).ready(function(){
+                $("#login").submit(function(){
+                    $.cookie("ID",$("#email").val());
+                    console.log($.cookie("ID"));
+                    alert('登入成功');
+                    window.location.assign('index.html')
+                    return false;
+                })
+            });
+        </script>
     </body>
 </html>

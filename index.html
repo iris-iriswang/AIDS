@@ -14,6 +14,7 @@
         <!-- jquery must load first, because bs needs to use jquery -->
         <script type="text/javascript" src="./js/jquery.min.js"></script>
         <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+        <script src="./js/jquery.cookie.js"></script>
     </head>
 
 
@@ -41,7 +42,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="create_activity.html">+ 建立活動</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">your name<span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="name">your name<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="attend_activity_list.html">已參加活動</a></li>
                                 <li><a href="host_activity_list.html">創辦的活動</a></li>
@@ -175,5 +176,11 @@
                 </div><!-- col-sm-6 col-md-4 -->
             </div><!-- /.row -->
         </div><!-- /.container -->
+        <script>
+        $(document).ready(function(){
+
+            $("#name").html($.cookie("ID")+'<span class="caret"></span>');
+        });
+        </script>
     </body>
 </html>
