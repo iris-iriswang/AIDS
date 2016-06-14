@@ -92,10 +92,14 @@
         </div><!-- /.container -->
         <script>
         $(document).ready(function(){
-
+            if($.cookie("ID") == null ){
+                window.location.assign('singin.html');
+            }
             $("#name").html($.cookie("ID")+'<span class="caret"></span>');
             $("#create_activity").submit(function(){
+                if($.cookie("activity")!=null){
                     var total = $.cookie("activity");
+                }
                     var act = $("#act_title").val()+','+$("#act_date").val()+','+$("#act_time").val()+','+$("#act_location").val()+','+$("#act_introduce").val()+'&';
                     $.cookie("activity",total+act);
                     console.log($.cookie("activity"));

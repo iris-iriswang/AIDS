@@ -87,7 +87,9 @@
         </div><!-- /.container -->
         <script>
         $(document).ready(function(){
-
+            if($.cookie("ID") == null ){
+                window.location.assign('singin.html');
+            }
             $("#name").html($.cookie("ID")+'<span class="caret"></span>');
         });
         </script>
