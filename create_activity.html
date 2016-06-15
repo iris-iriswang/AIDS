@@ -100,6 +100,9 @@
                 if($.cookie("activity")){
                     var total = $.cookie("activity");
                 }
+                else{
+                    var total = "";
+                }
                     var act = $("#act_title").val()+','+$("#act_date").val()+','+$("#act_time").val()+','+$("#act_location").val()+','+$("#act_introduce").val()+'&';
                     $.cookie("activity",total+act);
                     console.log($.cookie("activity"));
