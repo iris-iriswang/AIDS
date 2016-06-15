@@ -58,45 +58,43 @@
         <div class="container">
             <h2> 已參加活動列表 </h2>
             <!-- listimg -->
-            <div class="media center">
+            <div class="media center a1" style="display:none;">
                 <div class="media-left media-middle">
                     <a href="activity.html">
-                    <img class="media-object listimg" src="./img/test.jpg" alt="...">
+                    <img class="media-object listimg" src="./img/a1.jpg" alt="...">
                     </a>
                 </div>
                 <div class="media-right media-body">
-                    <h2 class="media-heading">活動名稱</h2>
-                    <p class="time">2016/06/17 (五) 13:20 - 15:10</p>
-                    <p>地點地點</p>
-                    <p>活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介</p>
-                </div><!-- /.media-body -->
-            </div><!-- /.media -->
-            <hr>
-            <div class="media center">
+                    <h2 class="media-heading">理查克萊德門 2016 世界巡迴音樂會</h2>
+                    <p class="time">2016/7/23 (六) 18:30</p>
+                    <p>臺南市東區中華東路三段332號(臺南文化中心)</p>
+                    <p>世界上最浪漫的鋼琴王子，同時也是金氏世界紀錄『世界上最成功的鋼琴家』不只彈奏了許多膾炙人口的經典名曲，更影響無數年輕人投身鋼琴家的行列，他是Richard Clayderman 理查克萊德門...</p>
+                </div>
+            </div>
+            <div class="media center a2" style="display:none;">
                 <div class="media-left media-middle">
-                    <a href="activity.html">
-                    <img class="media-object listimg" src="./img/test.jpg" alt="...">
+                    <a href="activity2.html">
+                    <img class="media-object listimg" src="./img/a2.jpg" alt="...">
                     </a>
                 </div>
                 <div class="media-right media-body">
-                    <h2 class="media-heading">活動名稱</h2>
-                    <p class="time">2016/06/17 (五) 13:20 - 15:10</p>
-                    <p>地點地點</p>
-                    <p>活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介</p>
-                </div><!-- /.media-body -->
-            </div><!-- /.media -->
-            <hr>
-            <div class="media center">
+                    <h2 class="media-heading">富邦講堂．設計系列】《The Food Project—2016臺北世界設計之都特別企劃》</h2>
+                    <p class="time">6/27(一)、7/18(一)、7/28(四)、8/5(五) 19:00-21:00</p>
+                    <p>臺北文創大樓6樓 (台北市菸廠路88號) </p>
+                    <p>食物設計是設計界的新議題。知名荷蘭設計學院Design Academy Eindhoven於2014年開辦食物設計學系，2015年的米蘭設計週和世博舉行期間，也可發現以食物為主題所設計的大型藝術展覽...</p>
+                </div>
+            </div>
+            <div class="media center a3" style="display:none;">
                 <div class="media-left media-middle">
-                    <a href="activity.html">
-                    <img class="media-object listimg" src="./img/test.jpg" alt="...">
+                    <a href="activity3.html">
+                    <img class="media-object listimg" src="./img/a3.jpg" alt="...">
                     </a>
                 </div>
-                <div class="media-body media-right">
-                    <h2 class="media-heading">活動名稱</h2>
-                    <p class="time">2016/06/17 (五) 13:20 - 15:10</p>
-                    <p>地點地點</p>
-                    <p>活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介活動簡介</p>
+                <div class="media-right media-body">
+                    <h2 class="media-heading">田馥甄《小夜曲Serenade》音樂舞台劇</h2>
+                    <p class="time">2016/7/15~7/17（五～日）</p>
+                    <p>新北市淡水區中正路一段6巷36號(淡水雲門劇場)</p>
+                    <p>從田馥甄新專輯《日常》的五首歌曲，串連起一個關於夜的故事。故事的主角在夜裡徘徊不去，有的嗜睡，有的失眠，卻通往相同的夢境。在這座不存在卻異常真實的溫室空間中，時間凝結不動，宛如現實世界的對立面，不同角色背負著各自故事和悲慟於此相遇，種種細微的關懷和淡淡的人際關係，建立起人與人之間最堅實的信任堡壘...</p>
                 </div><!-- /.media-body -->
             </div><!-- /.media -->
 
@@ -105,6 +103,18 @@
         $(document).ready(function(){
             if($.cookie("ID") == null ){
                 window.location.assign('singin.html');
+            }
+            if($.cookie('a1') == 'true'){
+                $(".a1").css('display','block');
+
+            }
+            if($.cookie('a2') == 'true'){
+                $(".a2").css('display','block');
+
+            }
+            if($.cookie('a3') == 'true'){
+                $(".a3").css('display','block');
+
             }
             $("#name").html($.cookie("ID")+'<span class="caret"></span>');
         });

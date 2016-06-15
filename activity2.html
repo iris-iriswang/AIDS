@@ -8,7 +8,7 @@
 
         <link rel="stylesheet" href="./css/bootstrap.min.css" charset="utf-8">
         <link rel="stylesheet" href="./css/navbar-static-top.css" >
-        <link rel="stylesheet" href="./css/create_activity.css" >
+        <link rel="stylesheet" href="./css/activity.css" >
         <link rel="stylesheet" href="./css/style.css">
 
         <!-- jquery must load first, because bs needs to use jquery -->
@@ -40,7 +40,7 @@
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">+ 建立活動</a></li>
+                        <li><a href="create_activity.html">+ 建立活動</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="name">your name<span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -50,45 +50,43 @@
                                 <li><a href="profile.html">關於我</a></li>
                             </ul>
                         </li>
-                        <li><a href="#"></a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container -->
         </nav>
 
         <div class="container">
-            <form class="form-horizontal act-form" action="" method="" id="create_activity">
-                <h2>活動內容</h2>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="act_title">名稱：</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  id="act_title" placeholder="活動名稱" autofocus="">
+            <div class="activity">
+                <div class="page-header">
+                    <h1>【富邦講堂．設計系列】《The Food Project—2016臺北世界設計之都特別企劃》  <small>6/27(一)、7/18(一)、7/28(四)、8/5(五)</small></h1>
+                </div>
+                <form class="form">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-info">報名參加</button>
+                        <button type="button" class="btn btn-danger" onclick="$.cookie('a2',false);window.location.assign('index.html');">取消參加</button>
                     </div>
-                </div><!-- /.form-group -->
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="act_date">日期：</label>
-                    <div class="col-sm-10">
-                        <input type="date" class="form-control"  id="act_date" placeholder="YYYY/MM/DD">
-                    </div>
-                </div><!-- /.form-group -->
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="act_time">時間：</label>
-                    <div class="col-sm-10">
-                        <input type="time" class="form-control"  id="act_time" placeholder="HH:MM">
-                    </div>
-                </div><!-- /.form-group -->
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="act_location">地點：</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  id="act_location" placeholder="Loction">
-                    </div>
-                </div><!-- /.form-group -->
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="act_introduce">簡介：</label>
-                    <textarea type="text" class="form-control" warp="soft" id="act_introduce" maxlength="300" placeholder="Introduce"></textarea>
-                </div><!-- /.form-group -->
-                <input type="submit" value="建立">
-            </form>
+                </form>
+                <img src="./img/a2.jpg"></img>
+                <h3>主辦單位:</h3>
+                <p>
+                    富邦藝術基金會
+                </p>
+                <h3>時間:</h3>
+                <p>
+                    19:00-21:00
+                </p>
+                <h3>地點:</h3>
+                <p>
+                    臺北文創大樓6樓 (台北市菸廠路88號) 
+                </p>
+                <h3>簡介:</h3>
+                <p>
+                    食物設計是設計界的新議題。知名荷蘭設計學院Design Academy Eindhoven於2014年開辦食物設計學系，2015年的米蘭設計週和世博舉行期間，也可發現以食物為主題所設計的大型藝術展覽。 <br>2016臺北世界設計之都「The Food Project」與富邦講堂合作，邀請加拿大新銳藝術家Nicholas Hanna與台灣的設計團隊ATOM，與活躍於國際的風味體驗設計雙人組Bompas &amp; Parr、IKEA創新設計實驗室Space10創意總監Kaave Pour, 及食物設計先驅西班牙設計師Martí Guixé。邀請您以視覺進食，用大腦消化。<br>
+<br>
+■ 系列主持人：王艾莉
+畢業於皇家藝術學院互動設計碩士，現為Alice Wang Design王艾莉設計的負責人，並於今年創立了新設計刊物 PPW。 
+                </p>
+            </div><!-- /.activity -->
         </div><!-- /.container -->
         <script>
         $(document).ready(function(){
@@ -96,17 +94,6 @@
                 window.location.assign('singin.html');
             }
             $("#name").html($.cookie("ID")+'<span class="caret"></span>');
-            $("#create_activity").submit(function(){
-                if($.cookie("activity")){
-                    var total = $.cookie("activity");
-                }
-                    var act = $("#act_title").val()+','+$("#act_date").val()+','+$("#act_time").val()+','+$("#act_location").val()+','+$("#act_introduce").val()+'&';
-                    $.cookie("activity",total+act);
-                    console.log($.cookie("activity"));
-                    alert('成功');
-                    window.location.assign('index.html')
-                    return false;
-            })
         });
         </script>
     </body>

@@ -70,7 +70,7 @@
             if($.cookie("ID") == null ){
                 window.location.assign('singin.html');
             }
-            
+            $("#name").html($.cookie("ID")+'<span class="caret"></span>');
             var act = $.cookie("activity").split('&');
             var str = "";
             for(var i=0;i<act.length-1;i++){
@@ -78,7 +78,7 @@
                 str+=  '<div class="media center"><div class="media-left media-middle"><a href="activity.html"><img class="media-object listimg" src="./img/test.jpg" alt="..."></a></div><div class="media-right media-body"><h2 class="media-heading">'+a[0]+'</h2><p class="time">'+a[1]+'-'+a[2]+'</p><p>'+a[3]+'</p><p>'+a[4]+'</p></div><!-- /.media-body --></div>'
             }
             $("#list").html(str);
-            $("#name").html($.cookie("ID")+'<span class="caret"></span>');
+            
         });
         </script>
     </body>

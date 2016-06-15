@@ -8,7 +8,7 @@
 
         <link rel="stylesheet" href="./css/bootstrap.min.css" charset="utf-8">
         <link rel="stylesheet" href="./css/navbar-static-top.css" >
-        <link rel="stylesheet" href="./css/create_activity.css" >
+        <link rel="stylesheet" href="./css/activity.css" >
         <link rel="stylesheet" href="./css/style.css">
 
         <!-- jquery must load first, because bs needs to use jquery -->
@@ -40,7 +40,7 @@
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">+ 建立活動</a></li>
+                        <li><a href="create_activity.html">+ 建立活動</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="name">your name<span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -50,45 +50,55 @@
                                 <li><a href="profile.html">關於我</a></li>
                             </ul>
                         </li>
-                        <li><a href="#"></a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container -->
         </nav>
 
         <div class="container">
-            <form class="form-horizontal act-form" action="" method="" id="create_activity">
-                <h2>活動內容</h2>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="act_title">名稱：</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  id="act_title" placeholder="活動名稱" autofocus="">
+            <div class="activity">
+                <div class="page-header">
+                    <h1>田馥甄《小夜曲Serenade》音樂舞台劇  <small><br>2016/7/15~7/17（五～日）<br>7/19~7/23（二～六） 20:00 <br>2016/7/16~7/17（六～日）<br>7/23~7/24（六～日） 14:30</small></h1>
+                </div>
+                <form class="form">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-info">報名參加</button>
+                        <button type="button" class="btn btn-danger" onclick="$.cookie('a3',false);window.location.assign('index.html');">取消參加</button>
                     </div>
-                </div><!-- /.form-group -->
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="act_date">日期：</label>
-                    <div class="col-sm-10">
-                        <input type="date" class="form-control"  id="act_date" placeholder="YYYY/MM/DD">
-                    </div>
-                </div><!-- /.form-group -->
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="act_time">時間：</label>
-                    <div class="col-sm-10">
-                        <input type="time" class="form-control"  id="act_time" placeholder="HH:MM">
-                    </div>
-                </div><!-- /.form-group -->
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="act_location">地點：</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  id="act_location" placeholder="Loction">
-                    </div>
-                </div><!-- /.form-group -->
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="act_introduce">簡介：</label>
-                    <textarea type="text" class="form-control" warp="soft" id="act_introduce" maxlength="300" placeholder="Introduce"></textarea>
-                </div><!-- /.form-group -->
-                <input type="submit" value="建立">
-            </form>
+                </form>
+                <img src="./img/a3.jpg"></img>
+                <h3>主辦單位:</h3>
+                <p>
+                    華研國際音樂
+                </p>
+                <h3>時間:</h3>
+                <p>
+                    19:30
+                </p>
+                <h3>地點:</h3>
+                <p>
+                    新北市淡水區中正路一段6巷36號(淡水雲門劇場)
+                </p>
+                <h3>簡介:</h3>
+                <p>
+                    從田馥甄新專輯《日常》的五首歌曲，串連起一個關於夜的故事。<br>故事的主角在夜裡徘徊不去，有的嗜睡，有的失眠，卻通往相同的夢境。<br>在這座不存在卻異常真實的溫室空間中，時間凝結不動，宛如現實世界的對立面，不同角色背負著各自故事和悲慟於此相遇，種種細微的關懷和淡淡的人際關係，建立起人與人之間最堅實的信任堡壘。<br>這個夜，這些人物，在田馥甄的歌曲中，拼湊出一個完整的生命圖像，療癒生命旅程中各種既意外又命定的傷痛，感受既寂寞又飽滿的人生。<br><br>
+
+ 
+
+編劇：王嘉明<br>
+導演：Baboo <br>
+演員：田馥甄、嚴藝文、時一修、趙逸嵐、施宣卉、黃俊傑 <br>
+
+製作人：尚安璿<br>
+音樂總監：王治平<br>
+音樂設計：柯智豪<br>
+服裝設計：陳劭彥<br>
+舞台設計：李柏霖<br>
+燈光設計：鄧振威<br>
+影像設計：孫瑞鴻<br>
+舞台監督：張仲平<br>
+                </p>
+            </div><!-- /.activity -->
         </div><!-- /.container -->
         <script>
         $(document).ready(function(){
@@ -96,17 +106,6 @@
                 window.location.assign('singin.html');
             }
             $("#name").html($.cookie("ID")+'<span class="caret"></span>');
-            $("#create_activity").submit(function(){
-                if($.cookie("activity")){
-                    var total = $.cookie("activity");
-                }
-                    var act = $("#act_title").val()+','+$("#act_date").val()+','+$("#act_time").val()+','+$("#act_location").val()+','+$("#act_introduce").val()+'&';
-                    $.cookie("activity",total+act);
-                    console.log($.cookie("activity"));
-                    alert('成功');
-                    window.location.assign('index.html')
-                    return false;
-            })
         });
         </script>
     </body>
